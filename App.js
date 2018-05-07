@@ -107,7 +107,7 @@ export default class App extends Component<Props> {
 		});
 		const animatedBackgroundColor = this.animation.y.interpolate({
 			inputRange: [0, SCREEN_HEIGHT - 80],
-			outputRange: ['rgba(0,0,0,0.5)', 'white'],
+			outputRange: ['rgba(0,0,0,0.2)', 'white'],
 			extrapolate: 'clamp'
 		});
 		return (
@@ -119,6 +119,11 @@ export default class App extends Component<Props> {
 					backgroundColor={'rgba(0,0,0,0)'}
 					barStyle="dark-content"
 				/>
+				<View
+					style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}
+				>
+					<Text>HERE IS YOUR MUSIC</Text>
+				</View>
 				<Animated.View
 					{...this.panResponder.panHandlers}
 					style={[
