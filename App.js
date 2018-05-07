@@ -30,12 +30,16 @@ export default class App extends Component<Props> {
 		this.panResponder = PanResponder.create({
 			onMoveShouldSetPanResponder: (evt, gestureState) => {
 				if (
-					(this.state.isScrollEnabled &&
-						this.scrollOffset <= 0 &&
-						gestureState.dy > 0) ||
-					(!this.state.isScrollEnabled && gestureState.dy < 0)
+					// uncomment code below to enable minimize by swipe
+					// (this.state.isScrollEnabled &&
+					// 	this.scrollOffset <= 0 &&
+					// 	gestureState.dy > 0) ||
+					!this.state.isScrollEnabled &&
+					gestureState.dy < 0
 				) {
 					return true;
+				} else {
+					return false;
 				}
 			},
 			onPanResponderGrant: (evt, gestureState) => {
